@@ -21,7 +21,11 @@ class CategoryController extends Controller
     {
         //ORM
 
-        $categories = Category::latest()->get();
+        // $categories = Category::latest()->get();
+
+        // Quary Builder
+
+        $categories = DB::table('categories')->latest()->get();
 
         return view('admin.category.index', compact('categories'));
     }
