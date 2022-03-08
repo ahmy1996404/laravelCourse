@@ -30,7 +30,7 @@ class CategoryController extends Controller
         // Quary Builder with relation JOIN
 
         $categories = DB::table('categories')
-        ->join('users', 'categories.user_id','user_id')
+        ->join('users', 'categories.user_id','users.id')
         ->select('categories.*','users.name')
         ->latest()->paginate(5);
 
