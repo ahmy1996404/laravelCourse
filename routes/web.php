@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BrandController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ContactController;
 use App\Models\User;
@@ -37,6 +38,9 @@ Route::post('/category/update/{id}' , [CategoryController::class , 'Update']);
 Route::get('softdelete/category/{id}' , [CategoryController::class , 'SoftDelete']);
 Route::get('/category/restore/{id}' , [CategoryController::class , 'Restore']);
 Route::get('pdelete/category/{id}' , [CategoryController::class , 'Pdelete']);
+
+// Brand Controller
+Route::get('/brand/all' , [BrandController::class , 'AllBrand'])->name('all.brand');
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     //$users = User::all();
