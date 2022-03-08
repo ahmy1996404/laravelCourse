@@ -34,6 +34,7 @@ Route::get('/category/all' , [CategoryController::class , 'AllCat'])->name('all.
 Route::post('/category/add' , [CategoryController::class , 'AddCat'])->name('store.category');
 Route::get('/category/edit/{id}' , [CategoryController::class , 'Edit']);
 Route::post('/category/update/{id}' , [CategoryController::class , 'Update']);
+Route::get('softdelete/category/{id}' , [CategoryController::class , 'SoftDelete']);
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     //$users = User::all();
