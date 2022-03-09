@@ -39,9 +39,9 @@
                                 @foreach ( $brands as $brand )
 
                                 <tr>
-                                    <th scope="row">{{ $brand->firstItem()+$loop->index }}</th>
-                                    <td>{{ $brand->category_name }}</td>
-                                    <td><img src="" alt=""></td>
+                                    <th scope="row">{{ $brands->firstItem()+$loop->index }}</th>
+                                    <td>{{ $brand->brand_name }}</td>
+                                    <td><img src="{{ asset($brand->brand_image) }}" style="height: 40px ; width:70px ; " alt=""></td>
                                     <td>
                                         @if ($brand->created_at == NULL)
                                         <span class="text-danger">No Date Set</span>
@@ -67,7 +67,7 @@
                             Add brand
                         </div>
                         <div class="card-body">
-                            <form action="" method="POST">
+                            <form action="{{ route('store.brand') }}" method="POST" enctype="multipart/form-data">
                                 @csrf
                                 <div class="form-group">
                                   <label for="exampleInputEmail1">Brand Name</label>
