@@ -83,4 +83,19 @@ class BrandController extends Controller
         }
 
     }
+    /**
+     * Delete the record with image
+     *
+     * @param  int $id Record id to delete
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function Delete($id)
+    {
+        $brand = Brand::find($id);
+        $old_image = $brand->brand_image;
+        unlink($old_image);
+        $brand->delete();
+         return Redirect()->back()->with('success','Brand deleted successfully');
+
+    }
 }
