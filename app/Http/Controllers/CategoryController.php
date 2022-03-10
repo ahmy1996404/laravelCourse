@@ -11,6 +11,10 @@ use Illuminate\Support\Facades\Redirect;
 
 class CategoryController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
 
     /**
      * AllCat

@@ -10,6 +10,13 @@ use Illuminate\Support\Facades\Redirect;
 use Intervention\Image\Facades\Image;
 class BrandController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
+    
     public function AllBrand()
     {
         $brands = Brand::latest()->paginate(5);
@@ -123,7 +130,7 @@ class BrandController extends Controller
         Image::make($multi_img)->resize(300,200)->save('image/multi/'.$name_gen);
 
         $last_img = 'image/multi/'.$name_gen;
- 
+
         Multipic::insert([
             'image'=> $last_img ,
             'created_at'=>Carbon::now()
