@@ -6,7 +6,7 @@
         <div class="container">
             <div class="row">
                 <h4>home slider</h4>
-                <a href=""><button class="btn btn-info">Add slider</button></a>
+                <a href="{{ route('add.slider') }}"><button class="btn btn-info">Add slider</button></a>
                 <br>
                 <div class="col-md-12">
                     <div class="card">
@@ -38,7 +38,7 @@
                                 @foreach ( $sliders as $slider )
 
                                 <tr>
-                                    <th scope="row">{{ $sliders->firstItem()+$loop->index }}</th>
+                                    <th scope="row">{{ $loop->index +1 }}</th>
                                     <td>{{ $slider->title }}</td>
                                     <td>{{ $slider->description }}</td>
                                     <td><img src="{{ asset($slider->image) }}" style="height: 40px ; width:70px ; " alt=""></td>
