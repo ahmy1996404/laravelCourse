@@ -5,7 +5,7 @@
         <div class="container">
             <div class="row">
                 <h4>contact</h4>
-                <a href="{{ route('add.about') }}"><button class="btn btn-info">Add contact</button></a>
+                <a href="{{ route('add.contact') }}"><button class="btn btn-info">Add contact</button></a>
                 <br>
                 <div class="col-md-12">
                     <div class="card">
