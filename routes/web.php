@@ -25,7 +25,8 @@ Route::get('/email/verify', function () {
 
 Route::get('/', function () {
     $brands = DB::table('brands')->get();
-    return view('home',compact('brands'));
+    $abouts = DB::table('home_abouts')->first();
+    return view('home',compact('brands', 'abouts'));
 });
 Route::get('/home', function () {
     echo 'this is home page';
