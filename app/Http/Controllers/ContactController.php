@@ -2,18 +2,18 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Contact;
 use Illuminate\Http\Request;
 
 class ContactController extends Controller
 {
-    public function __construct()
+    public function AdminContact()
     {
-        $this->middleware('auth');
+        $contacts = Contact::all();
+       return view('admin.contact.index',compact('contacts'));
     }
-
-    
     public function index()
     {
-        return view('contact');
+        # code...
     }
 }

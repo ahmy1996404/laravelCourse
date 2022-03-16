@@ -76,6 +76,8 @@ Route::get('/about/delete/{id}', [AboutController::class, 'DeleteAbout']);
 
 // portifolio page route
 Route::get('/portifolio', [AboutController::class, 'Portifolio'])->name('portifolio');
+// admin contact page
+Route::get('/admin/contcat', [ContactController::class, 'AdminContact'])->name('contact');
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     //$users = User::all();
