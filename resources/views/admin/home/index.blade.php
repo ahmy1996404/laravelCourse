@@ -42,8 +42,8 @@
                                         <td>{{ $about->log_dis }}</td>
 
                                         <td>
-                                            <a href="{{ url('slider/edit/' . $about->id) }}" class="btn btn-info">Edit</a>
-                                            <a href="{{ url('slider/delete/' . $about->id) }}"
+                                            <a href="{{ url('about/edit/' . $about->id) }}" class="btn btn-info">Edit</a>
+                                            <a href="{{ url('about/delete/' . $about->id) }}"
                                                 onclick="return confirm('Are You sure to delete')"
                                                 class="btn btn-danger">Delete</a>
 
