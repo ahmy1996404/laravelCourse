@@ -81,6 +81,9 @@ Route::get('/admin/contcat', [ContactController::class, 'AdminContact'])->name('
 Route::get('/admin/add/contcat', [ContactController::class, 'AdminAddContact'])->name('add.contact');
 Route::post('/admin/store/contcat', [ContactController::class, 'AdminStoreContact'])->name('store.contact');
 
+// home contact
+Route::get('/contcat', [ContactController::class, 'Contact'])->name('home.contact');
+
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     //$users = User::all();
     $users = DB::table('users')->get();

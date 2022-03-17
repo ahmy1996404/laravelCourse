@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Contact;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ContactController extends Controller
 {
@@ -27,6 +28,11 @@ class ContactController extends Controller
             'created_at' => Carbon::now()
         ]);
         return redirect()->route('contact')->with('success', 'Contact inserted successfully');
+    }
+    public function Contact()
+    {
+        $contacts = DB::table('contacts')->first();
+        return view('pages.contact',compact('contacts'));
     }
     public function index()
     {
