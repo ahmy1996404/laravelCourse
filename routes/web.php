@@ -83,6 +83,7 @@ Route::post('/admin/store/contcat', [ContactController::class, 'AdminStoreContac
 
 // home contact
 Route::get('/contcat', [ContactController::class, 'Contact'])->name('home.contact');
+Route::post('/contcat/form', [ContactController::class, 'ContactForm'])->name('contact.form');
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     //$users = User::all();
