@@ -99,4 +99,7 @@ Route::get('/user/logout' , [BrandController::class , 'Logout'])->name('user.log
 
 // change password and user profile
 Route::get('/user/password', [ChangePassController::class, 'CPassword'])->name('change.password');
-Route::get('/password/update', [ChangePassController::class, 'UpdatePassword'])->name('password.update');
+Route::post('/password/update', [ChangePassController::class, 'UpdatePassword'])->name('password.update');
+
+// user profile
+Route::get('/profile/user', [ChangePassController::class, 'PUpdate'])->name('profile.update');
