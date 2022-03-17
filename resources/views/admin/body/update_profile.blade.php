@@ -3,10 +3,18 @@
 @section('admin')
 <div class="card card-default">
     <div class="card-header card-header-border-bottom">
-        <h2>change password</h2>
+        <h2>update profile</h2>
     </div>
+    @if (session('success'))
+                            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                <strong>{{ session('success') }}</strong>
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                        @endif
     <div class="card-body">
-        <form method="POST" action="{{ route('password.update') }}"  class="form-pill">
+        <form method="POST" action="{{ route('user.profile.update') }}"  class="form-pill">
             @csrf
             <div class="form-group">
                 <label for="exampleFormControlInput3">User Name</label>
