@@ -58,21 +58,6 @@
                                         </a>
                                     </li>
 
-
-
-
-                                    <li>
-                                        <a class="sidenav-item-link" href="analytics.html">
-                                            <span class="nav-text">Analytics</span>
-
-                                            <span class="badge badge-success">new</span>
-
-                                        </a>
-                                    </li>
-
-
-
-
                                 </div>
                             </ul>
                         </li>
@@ -97,7 +82,7 @@
                                         </a>
                                     </li>
                                     <li class="active">
-                                        <a class="sidenav-item-link" href="">
+                                        <a class="sidenav-item-link" href="{{ route('admin.message') }}">
                                             <span class="nav-text">Contact Message</span>
 
                                         </a>

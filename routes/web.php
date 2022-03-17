@@ -80,6 +80,7 @@ Route::get('/portifolio', [AboutController::class, 'Portifolio'])->name('portifo
 Route::get('/admin/contcat', [ContactController::class, 'AdminContact'])->name('contact');
 Route::get('/admin/add/contcat', [ContactController::class, 'AdminAddContact'])->name('add.contact');
 Route::post('/admin/store/contcat', [ContactController::class, 'AdminStoreContact'])->name('store.contact');
+Route::get('/admin/message', [ContactController::class, 'AdminMessage'])->name('admin.message');
 
 // home contact
 Route::get('/contcat', [ContactController::class, 'Contact'])->name('home.contact');
