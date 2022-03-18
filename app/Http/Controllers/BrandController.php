@@ -56,7 +56,12 @@ class BrandController extends Controller
             'brand_image'=>$last_img,
             'created_at'=>Carbon::now()
         ]);
-        return Redirect()->back()->with('success','Brand inserted successfully');
+
+        $notification = array(
+            "message"=> "Brand inserted successfully",
+            "alert-type"=>'success'
+        );
+        return Redirect()->back()->with($notification);
     }
     public function Edit($id)
     {
